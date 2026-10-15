@@ -1,0 +1,19 @@
+{
+  "name": "sap-context-store-lyzr",
+  "version": "1.0.0",
+  "description": "SAP Configuration Knowledge Context Store powered by Lyzr Agent API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "sap",
+    "lyzr",
+    "context-store",
+    "sap-configuration",
+    "knowledge-graph"
+  ],
+  "author": "Antigravity",
+  "license": "MIT"
+}

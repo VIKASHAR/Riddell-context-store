@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riddell | SAP Knowledge Portal</title>
+  <meta name="description" content="Riddell Enterprise SAP Knowledge Assistant for Sales & Distribution (SD) and Materials Management (MM) processes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Top Clean Enterprise Header -->
+    <header class="app-header">
+      <div class="header-left">
+        <div class="brand">
+          <span class="riddell-badge">RIDDELL</span>
+          <span class="brand-divider"></span>
+          <span class="brand-title">SAP Knowledge Portal</span>
+          <span class="scope-tag">SD &amp; MM</span>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <button id="new-chat-btn" class="btn btn-secondary" title="Start a fresh conversation">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+          <span>New Chat</span>
+        </button>
+        <button id="settings-btn" class="icon-btn" title="Settings" aria-label="Settings">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Chat Workspace -->
+    <main class="chat-container">
+      <div class="chat-viewport" id="chat-viewport">
+        <!-- Clean White Theme Welcome Hero -->
+        <div class="welcome-hero" id="welcome-hero">
+          <div class="hero-brand-mark">
+            <span class="riddell-large-badge">RIDDELL</span>
+          </div>
+          <h1 class="hero-title">SAP Knowledge Base</h1>
+          <p class="hero-subtitle">
+            Query business processes, steps, and technical execution across Riddell's SAP Sales &amp; Distribution (SD) and Materials Management (MM) environments.
+          </p>
+
+          <!-- Sample Prompts Alone -->
+          <div class="sample-prompts-section">
+            <div class="sample-prompts-label">Sample Prompts</div>
+            <div class="prompts-grid">
+              <button class="prompt-card" data-query="What process steps, variants, and BAPIs are linked in the graph for Order-to-Cash / Create Sales Order?">
+                <div class="prompt-card-title">Order-to-Cash &amp; Sales Orders</div>
+                <div class="prompt-card-desc">What process steps, variants, and BAPIs are linked for Create Sales Order?</div>
+                <div class="prompt-card-arrow">→</div>
+              </button>
+
+              <button class="prompt-card" data-query="Explain how Stock Transfers are modeled in the graph: One-step vs Two-step transfer for Plant to Plant and Storage Location to Storage Location.">
+                <div class="prompt-card-title">Plant &amp; S.Loc Stock Transfers</div>
+                <div class="prompt-card-desc">Explain 1-step vs 2-step stock transfers for Plant to Plant and S.Loc to S.Loc.</div>
+                <div class="prompt-card-arrow">→</div>
+              </button>
+
+              <button class="prompt-card" data-query="What entities and steps exist in the graph for Procurement and Purchasing: Purchase Orders, Goods Receipt, and Invoice processing?">
+                <div class="prompt-card-title">Procurement &amp; Goods Receipt</div>
+                <div class="prompt-card-desc">Show procurement flow from Purchase Requisitions to PO and Goods Receipts.</div>
+                <div class="prompt-card-arrow">→</div>
+              </button>
+
+              <button class="prompt-card" data-query="What process steps and variants exist in the graph for Consignment Sales (Fill-up, Pick-up, Issue, Return)?">
+                <div class="prompt-card-title">Consignment Workflows</div>
+                <div class="prompt-card-desc">Detail Consignment Fill-up, Pick-up, Issue, and Return process steps.</div>
+                <div class="prompt-card-arrow">→</div>
+              </button>
+
+              <button class="prompt-card" data-query="Explain the Physical Inventory process in the graph: Physical Inventory Document, Count, and Post Physical Inventory.">
+                <div class="prompt-card-title">Physical Inventory &amp; Count</div>
+                <div class="prompt-card-desc">Trace steps for Physical Inventory Document, Count, and Post Adjustments.</div>
+                <div class="prompt-card-arrow">→</div>
+              </button>
+
+              <button class="prompt-card" data-query="What steps and rules are indexed for Customer Return, Credit Memo, and Debit Memo requests?">
+                <div class="prompt-card-title">Returns &amp; Credit Memos</div>
+                <div class="prompt-card-desc">What steps and objects exist for invoice corrections with credit and debit memos?</div>
+                <div class="prompt-card-arrow">→</div>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chat Messages Container -->
+        <div class="messages-container" id="messages-container"></div>
+
+        <!-- Clean Thinking Indicator -->
+        <div class="thinking-wrapper hidden" id="thinking-indicator">
+          <div class="thinking-avatar">R</div>
+          <div class="thinking-box">
+            <span class="thinking-dot"></span>
+            <span class="thinking-text" id="thinking-label">Querying SAP Knowledge Graph...</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Clean Centered Floating Prompt Input -->
+      <div class="chat-input-wrapper">
+        <div class="chat-input-card">
+          <textarea
+            id="message-input"
+            placeholder="Ask an SAP process or configuration question..."
+            rows="1"
+            autocomplete="off"
+            spellcheck="true"
+          ></textarea>
+          <button id="send-btn" class="send-btn" disabled aria-label="Send Query">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          </button>
+        </div>
+        <div class="input-disclaimer">
+          Riddell SAP Knowledge Base &bull; Powered by Lyzr Agent API &bull; SD &amp; MM Indexed
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Minimal Settings Modal -->
+  <div class="modal-overlay hidden" id="settings-modal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div class="modal-title">
+          <span class="riddell-badge-sm">RIDDELL</span>
+          <span>Connection Settings</span>
+        </div>
+        <button id="close-modal-btn" class="icon-btn-sm" aria-label="Close">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="cfg-endpoint">Lyzr Endpoint</label>
+          <input type="text" id="cfg-endpoint" value="/api/chat">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group flex-1">
+            <label for="cfg-agent-id">Agent ID</label>
+            <input type="text" id="cfg-agent-id" value="">
+          </div>
+          <div class="form-group flex-1">
+            <label for="cfg-user-id">User ID</label>
+            <input type="text" id="cfg-user-id" value="">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="cfg-session-id">Session ID</label>
+          <input type="text" id="cfg-session-id" value="">
+        </div>
+
+        <div class="form-group">
+          <label for="cfg-api-key">API Key (Optional Override)</label>
+          <input type="password" id="cfg-api-key" placeholder="Loaded securely from server .env" value="">
+          <small class="field-hint">Leave blank to use confidential credentials from <code>.env</code></small>
+        </div>
+
+        <div class="test-conn-result hidden" id="test-conn-result"></div>
+      </div>
+
+      <div class="modal-footer">
+        <button id="test-conn-btn" class="btn btn-secondary">Test Connection</button>
+        <div class="modal-footer-right">
+          <button id="save-settings-btn" class="btn btn-primary">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
